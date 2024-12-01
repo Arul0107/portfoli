@@ -1,0 +1,288 @@
+/* General Styles */
+.schooling-area {
+    background-color: #232327; /* Dark background */
+    position: relative;
+    padding-top: 138px;
+    padding-bottom: 126px;
+}
+
+#light .schooling-area {
+    background-color: rgba(42, 42, 42, 0.05); /* Light mode background */
+}
+
+/* Container */
+.schooling-area .container-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+/* Line Shape */
+.schooling-area .line-shape {
+    position: absolute;
+    left: 300px;
+    top: -90px;
+    animation: pulse 2s infinite;
+    max-width: 100%;
+}
+ .pattern {
+    position: absolute;
+    top: 0%;
+    left: 40%;
+    transform: translateX(-20%);
+    z-index: -99;
+  }
+/* Title Styles */
+.schooling-area .section-title-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.schol-h2{
+    font-size: 50px;
+    color: aliceblue;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 80px;
+}
+/* Timeline Container */
+.timeline {
+    position: relative;
+    margin-top: 60px;
+    margin-left: 60px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+/* Timeline Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: lineDraw 2s ease-out forwards;
+}
+
+.timeline-item-wrapper {
+    padding-left: 77px;
+    opacity: 0;
+    animation: fadeInItem 1s forwards;
+}
+
+.timeline-item-wrapper:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.timeline-item-wrapper:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.timeline-item-wrapper:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+/* Timeline Item Styles */
+.timeline-item-wrapper .years {
+    margin-bottom: 14px;
+    font-size: 32px;
+    color: #ffffff;
+}
+.section-title {
+    font-size: 65px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+    color: #fff;
+
+    word-wrap: break-word; /* Ensure long words don't overflow */
+  }
+/* Schooling.css */
+
+/* Style for the container holding the profile image and personal information */
+.personal-iden {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+  }
+  
+  /* Style for the profile image */
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Style for the personal information text */
+  .personal-info {
+    margin-left: 20px;
+  }
+  
+  /* Style for the name, age, and phone number */
+  .personal-info h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .personal-info p {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  /* Media Query for responsiveness */
+  @media (max-width: 768px) {
+    .personal-iden {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .personal-info {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+  
+   .profile-pic {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+.timeline-item-wrapper .experience-details {
+    margin-bottom: 35px;
+}
+
+.timeline-item-wrapper .circle {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border: 1px solid #f1ff9d;
+    border-radius: 50%;
+    background-color: #232327;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: -12px;
+}
+
+.timeline-item-wrapper .circle span {
+    height: 13px;
+    width: 13px;
+    border: 1px solid #f1ff9d;
+    border-radius: 50%;
+    background-color: #232327;
+}
+
+.hr-tit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin:20px   0;
+    /* Adjust this to position the dot over the hr-tit line */
+    position: relative; 
+    
+}
+.hr-tit :before{
+    content: "";
+    display: block;
+    width: 80%; /* Adjust width of the line */
+    height: 2px;
+    background-color: #f1ff9d; /* Line color */
+    margin-right: 70px;
+}
+/* Hover Effects for Timeline Item */
+.timeline-item-wrapper:hover {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.timeline-item-wrapper:hover .experience-details h4 {
+    color: #f1ff9d;
+}
+
+.timeline-item-wrapper:hover .circle {
+    background-color: #f1ff9d;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInItem {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lineDraw {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .schooling-area .container-wrapper {
+        padding-top: 60px;
+    }
+
+    .timeline {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .schooling-area {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    .timeline {
+        margin-left: 30px;
+    }
+
+    .timeline-item-wrapper .years {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline {
+        margin-left: 20px;
+    }
+
+    .timeline-item-wrapper .years {
+        font-size: 12px;
+    }
+}
+
+/* Timeline Item Specific Styling */
+.timeline-item-wrapper .experience-details h4 {
+    font-size: 18px;
+    color: #f1ff9d;
+}
+
+.timeline-item-wrapper .experience-details p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}

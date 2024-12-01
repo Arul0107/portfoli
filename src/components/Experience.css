@@ -1,0 +1,115 @@
+/* Section Styling */
+.experience-area {
+  padding: 50px 15px;
+  background-color: #222327;
+  color: #fff;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Container Styling */
+.experience-area .container {
+  max-width: 90%; /* Ensure container takes full width of its parent */
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.label{
+  color: #f1ff9d !important;
+}
+/* Section Title */
+.experience-area .section-title {
+  font-size: 65px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  position: relative;
+  color: #fff;
+  word-wrap: break-word; /* Ensure long words don't overflow */
+}
+
+/* After Effect for Title */
+.experience-area .section-title::after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: 70%; /* Make the line take full width */
+  top: 50%;
+  background-color: #ffffff;
+  opacity: 0.58;
+  left: 45; /* Align the line to the left */
+}
+
+/* Counter Items */
+.counter-item {
+  text-align: center;
+  position: relative;
+}
+
+/* Counter Item Text */
+.counter-item h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.counter-item p {
+  font-family: 'Mona Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 10px;
+}
+
+/* Divider Between Counter Items */
+.counter-item:not(:last-child)::before {
+  content: '';
+  background: #ffffff;
+  opacity: 0.1;
+  position: absolute;
+  width: 2px;
+  height: 90%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 80%;
+}
+
+/* HR Line Styling */
+.experience-area .hr {
+  width: 100%;
+  margin-top: 40px;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 767px) {
+  .experience-area .section-title {
+    font-size: 28px;
+  }
+
+  .counter-item h3 {
+    font-size: 30px;
+  }
+
+  .counter-item p {
+    font-size: 16px;
+  }
+
+  .experience-area .hr {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .experience-area .section-title {
+    font-size: 30px;
+  }
+
+  .counter-item h3 {
+    font-size: 32px;
+  }
+
+  .counter-item p {
+    font-size: 17px;
+  }
+}

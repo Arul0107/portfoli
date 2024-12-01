@@ -1,0 +1,336 @@
+/* General Styling */
+.hero-area {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+    text-align: center; /* Center text */
+  }
+  
+  .hero-area .pattern {
+    position: absolute;
+    top: 0%;
+    left: 40%;
+    transform: translateX(-20%);
+    z-index: -1;
+  }
+  
+  .hero-area .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .hero-area .hero-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-right: 2rem;
+    text-align: center;
+  }
+  
+  .hero-area .hero-info-inner {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-area .social-media-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-area .social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-area .long-arrow {
+    margin-left: 1.1rem;
+    margin-right: 1.1rem;
+  }
+  
+  .hero-area .social-button a {
+    padding: 0.625rem 2rem;
+    margin-right: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s;
+  }
+  
+  .hero-area .social-button a:hover {
+    opacity: 0.8;
+  }
+  
+  .hero-area .bg-blue {
+    background-color: #233346;
+    color: white;    border: 1px solid white;
+
+  }
+  
+  .hero-area .bg-maroon {
+    background-color: #414242;
+    color: white;
+    border: 1px solid white;
+  }
+  
+  .hero-area .bg-dark-yellow {
+    background-color: #fd2677;
+    color: white;    border: 1px solid white;
+
+  }
+  
+  .hero-area .hero-title-heading-wrapper h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 2rem;
+  }
+  
+  .hero-area .hero-title-heading-wrapper h1 span {
+    color: #f1ff9d;
+  }
+  
+  .hero-area .hero-btn-wrapper {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero-area .theme-btn-one,
+  .hero-area .theme-btn-two {
+    padding: 0.875rem 2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    background-color: transparent;
+  }
+  
+  .hero-area .theme-btn-one {
+    border-color: #f1ff9d;
+    color: #ffffff;
+  }
+  
+  .hero-area .theme-btn-two {
+    border-color: #222;
+    color: #f1ff9d;
+    border: 1px solid white;
+  }
+  
+  .hero-area .theme-btn-one:hover {
+    background-color: #f1ff9d !important;
+    color: #000000 ;
+  }
+  
+  .hero-area .theme-btn-two:hover {
+    background-color: #3d3d3b !important;
+    color: rgb(255, 255, 255) !important;
+
+
+  }
+  
+  .hero-area .hero-btn-wrapper button {
+    cursor: pointer;
+  }
+  
+  .profile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile .profile-pic {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-area .stylish-arrow {
+    position: absolute;
+    top: 100%;
+    right: 100%;
+    width: 15rem;
+    animation: move-arrow 1.5s infinite alternate;
+  }
+  
+  .hero-area .stylish-star {
+    position: absolute;
+    top: -5%;
+    right: 2%;
+    width: 6.25rem;
+    animation: zoom-in-out 2s infinite;
+  }
+  
+  .hero-area .stylish-arrow,
+  .hero-area .stylish-star {
+    z-index: -1;
+  }
+  
+  /* Keyframes for Animations */
+  @keyframes move-arrow {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(20px);
+    }
+  }
+  
+  @keyframes zoom-in-out {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+  }
+  
+  /* Styling for h4 */
+  .hero-area h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.625rem;
+    text-transform: uppercase;
+  }
+  
+  .hero-area .social-button h4 {
+    color: #f1ff9d;
+    font-size: 1.125rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .hero-area .hero-title-heading-wrapper h1 {
+      font-size: 2.625rem;
+    }
+  
+    .hero-area .social-media-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .hero-area .social-button {
+      margin-bottom: 1rem;
+      justify-content: center;
+    }
+  
+    .hero-area .theme-btn-one,
+    .hero-area .theme-btn-two {
+      font-size: 0.875rem;
+      padding: 0.75rem 1.75rem;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .hero-area .hero-title-heading-wrapper h1 {
+      font-size: 2.25rem;
+    }
+  
+    .hero-area .social-media-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .hero-area .social-button {
+      margin-bottom: 1rem;
+      justify-content: center;
+    }
+  
+    .hero-area .social-button a {
+      padding: 0.75rem 1.5rem;
+      margin-right: 0;
+    }
+  
+    .hero-area .profile .profile-pic {
+      width: 15rem;
+      height: 15rem;
+    }
+  
+    .hero-area .theme-btn-one,
+    .hero-area .theme-btn-two {
+      font-size: 1rem;
+      padding: 0.625rem 1.25rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-area .hero-title-heading-wrapper h1 {
+      font-size: 1.75rem;
+    }
+  
+    .hero-area .social-button a {
+      padding: 0.625rem 1.25rem;
+    }
+  
+    .hero-area .profile .profile-pic {
+      width: 12rem;
+      height: 12rem;
+    }
+  
+    .hero-area .theme-btn-one,
+    .hero-area .theme-btn-two {
+      font-size: 1rem;
+      padding: 0.625rem 1.25rem;
+    }
+  
+    /* Adjust the columns for better centering on mobile */
+    .hero-area .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    .hero-area .profile {
+      margin-top: 2rem;
+    }
+  
+    .hero-area .hero-info-wrapper {
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-area .hero-title-heading-wrapper h1 {
+      font-size: 1.5rem;
+    }
+  
+    .hero-area .social-button a {
+      padding: 0.5rem 1rem;
+    }
+  
+    .hero-area .profile .profile-pic {
+      width: 10rem;
+      height: 10rem;
+    }
+  
+    .hero-area .theme-btn-one,
+    .hero-area .theme-btn-two {
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+  

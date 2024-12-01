@@ -1,0 +1,261 @@
+.project-area .h-p {
+    color: #f1ff9d !important;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+/* Section Title Styles */
+.section-title {
+    text-align: center;
+    margin:0px 0 0 40px; /* Space below the title */
+  }
+  
+  .section-title h2 {
+    text-transform: uppercase;
+
+    font-size: 36px; /* Main title font size */
+    font-weight: bold; /* Bold font weight */
+    color: #0c484b; /* Use your primary color */
+    margin-bottom: 10px; /* Space below the main title */
+    letter-spacing: 1px;
+  }
+  
+  .section-title .h-p {
+    font-size: 20px; /* Subtitle font size */
+    color: #777; /* Subtitle color */
+    font-weight: normal;
+    margin-top: 0;
+  }
+  
+  /* Add some responsiveness */
+  @media (max-width: 768px) {
+    .section-title h2 {
+      font-size: 28px;
+    }
+  
+    .section-title .h-p {
+      font-size: 18px;
+    }
+  }
+  
+#light .project-area .h-p {
+    color: #757980;
+}
+
+.project-area .section-title-wrapper {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-area h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.project-area .project-menu {
+    text-align: center;
+    margin-top: 20px;
+}
+.portfoli-card-main{
+    justify-content: center;
+}
+.project-area .project-menu ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.ant-card .ant-card-body{
+    padding: 0px;
+}
+.project-area .project-menu ul li {
+    padding: 10px 20px;
+    border-radius: 100px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#light .project-area .project-menu ul li {
+    background: rgba(31, 31, 31, 0.1);
+}
+
+.project-area .project-menu ul li:hover,
+.project-menu ul li.active {
+    background-color: #f1ff9d;
+    color: #000;
+}
+
+#light .project-area .project-menu ul li:hover,
+#light .project-menu ul li.active {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.project-area .round-btn-wrapper {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.project-area .round-btn-wrapper button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-area .round-btn {
+    height: 140px;
+    width: 140px;
+    border-radius: 100%;
+    background-color: #0c484b; /* Primary color */
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project-area .round-btn:hover {
+    background-color: #f1ff9d;
+    color: #000;
+}
+
+#dark-pattern .project-area .round-btn {
+    background-color: transparent;
+}
+
+#dark-pattern .project-area .round-btn:hover {
+    background-color: #f1ff9d;
+}
+
+#light .project-area .round-btn:hover {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.project-area .round-btn-wrapper img {
+    position: absolute;
+    margin-left: 140px;
+    margin-top: -115px;
+    height: 70px;
+    animation: zoom-in-zoom-out 2s infinite;
+    object-fit: contain;
+}
+
+@keyframes zoom-in-zoom-out {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.project-area .portfolio-card {
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #4645452e;
+  transition: transform 0.3s ease;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.project-area .portfolio-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-area .portfolio-image:hover {
+  transform: scale(1.05);
+}
+
+.project-area .portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-area .portfolio-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-area .portfolio-image:hover {
+    transform: scale(1.05);
+}
+
+/* Card Title and Description */
+.project-area .project-title-wrapper h5 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 15px;
+    color: #ffffff;
+}
+
+.project-area .project-title-wrapper p {
+    font-size: 1rem;
+    color: #757980;
+    margin-top: 5px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .project-area .row {
+        grid-template-columns: 1fr 1fr; /* Two columns for medium screens */
+    }
+
+    .project-area .portfolio-card {
+        margin: 10px;
+    }
+
+    .project-area .portfolio-image {
+        height: 180px; /* Slightly smaller images on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-area .row {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
+
+    .project-area .portfolio-image {
+        height: 150px; /* Smaller image size on small screens */
+    }
+}
+
+/* Ensure no scrollbars appear */
+.project-area {
+    overflow: hidden; /* Hide any overflow content */
+}
+
+/* If the scroll is happening due to content inside project-area */
+.project-area .row {
+    overflow: hidden;
+}
+
+/* Additional option to hide the horizontal scrollbar */
+body {
+    overflow-x: hidden;
+}
+.ant-modal .ant-modal-content{
+    background-color:#1f1f1f ;
+}
+.ant-modal .ant-modal-header{
+    background-color: #1f1f1f;
+}
+.ant-modal .ant-modal-title{
+    color: #f1ff9d !important;
+}
