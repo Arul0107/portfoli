@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Row, Col, Button, Card, Modal } from "antd";
 import { ArrowRightOutlined, NodeExpandOutlined } from "@ant-design/icons";
 import "./Portfolio.css";
-
-// Import images
 import project1Image from "../assets/images/projects/project-1.png";
 import project2Image from "../assets/images/projects/project-3.png";
 import project3Image from "../assets/images/projects/project-6.png";
@@ -16,53 +14,44 @@ import project8Image from "../assets/images/projects/project-8.png";
 const projectData = [
   {
     id: 1,
-    category: "ui-ux",
-    title: "NFT Landing UI",
-    description: "App Case Study",
-    image: project1Image,
+    category: "Graphics-design",
+    title: "Crunchy Bites",
+    description: [
+      "Local shop app for seamless snack orders",
+      "Focus on user-friendly design and navigation",
+      "Vibrant visuals for an engaging experience",
+      "Tailored features for local customer convenience",
+      "Efficient purchase process for quick access"
+    ],
+    image: project2Image
   },
   {
     id: 2,
-    category: "graphics-design",
-    title: "App Dashboard Design",
-    description: "App Case Study",
-    image: project2Image,
-  },
-  {
-    id: 3,
-    category: "apps-design",
-    title: "Business Landing Page",
-    description: "App Case Study",
+    category: "React",
+    title: "Weather Prediction",
+    description: "A simple weather prediction app built using the MERN stack.",
     image: project3Image,
   },
   {
-    id: 4,
-    category: "web-design",
-    title: "NFT Artwork App Design",
-    description: "App Case Study",
+    id: 3,
+    category: "Web-design",
+    title: "NEURO KNOT",
+    description: "A college symposium website built with web design technologies.",
     image: project4Image,
   },
   {
-    id: 5,
-    category: "graphics-design",
-    title: "Dark Mode App UI Design",
-    description: "App Case Study",
+    id: 4,
+    category: "Graphics-design",
+    title: "HR Dashboard",
+    description: "HR management dashboard designed for managing employee data.",
     image: project5Image,
   },
-
   {
-    id: 6,
-    category: "web-design",
-    title: "App UI Design",
-    description: "App Case Study",
+    id: 5,
+    category: "React",
+    title: "Local Nest",
+    description: "A MERN stack-based app for local business management.",
     image: project7Image,
-  },
-  {
-    id: 7,
-    category: "apps-design",
-    title: "Gaming Landing Page UI",
-    description: "App Case Study",
-    image: project8Image,
   },
 ];
 
@@ -85,6 +74,20 @@ const Portfolio = () => {
     return projectData.filter((project) => project.category === category);
   };
 
+  // Function to display description as list if it's an array
+  const renderDescription = (description) => {
+    if (Array.isArray(description)) {
+      return (
+        <ul>
+          {description.map((desc, index) => (
+            <li key={index}>{desc}</li>
+          ))}
+        </ul>
+      );
+    }
+    return <p>{description}</p>;
+  };
+
   return (
     <section id="portfolio" className="project-area pt-135">
       <div className=" port-container">
@@ -100,11 +103,11 @@ const Portfolio = () => {
             <ul>
               {[
                 "*",
-                "ui-ux",
-                "graphics-design",
-                "web-design",
-                "react",
-                "machine-learning",
+                "Graphics-design",
+                "Web-design",
+                "React",
+                "Machine-learning",
+                "Fun"
               ].map((category) => (
                 <li
                   key={category}

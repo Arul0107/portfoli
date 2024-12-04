@@ -41,7 +41,7 @@ const MySkills = () => {
   }, []);
 
   return (
-    <section id="skills" className="skills-area pt-95">
+    <section id="Skills" className="skills-area pt-95">
       <div className="container">
         <Row gutter={24} justify="center" align="middle">
           {/* Left Column: Skill Descriptions and Progress */}
