@@ -174,8 +174,8 @@ const Portfolio = () => {
                     type="link"
                     href={project.demoLink}
                     target="_blank"
-                    icon={<NodeExpandOutlined />}
-                    style={{ padding: "0", fontSize: "14px", color: "#1890ff" }}
+                    icon={<ArrowRightOutlined/>}
+                    style={{ padding: "0", fontSize: "14px", color: "#fff" }}
                   >
                     View Demo
                   </Button>

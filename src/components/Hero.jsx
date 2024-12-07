@@ -10,7 +10,7 @@ import star from '../assets/images/hero/star.svg';
 
 const Hero = () => {
   return (
-    <section className="hero-area" id="home">
+    <section className="hero-area hero-section " id="home">
       <div className="container">
         <Row align="middle" justify="center">
           {/* Left Side: Text and Buttons */}
@@ -23,21 +23,21 @@ const Hero = () => {
                   <div className="social-button">
                     <img className="long-arrow" src={longArrow} alt="long arrow" />
                     <a
-                      href="https://www.linkedin.com/"
+                      href="https://www.linkedin.com/in/arulprakash-v-4b537826a/"
                       target="_blank"
                       className="bg-blue text-light-blue rounded-pill"
                     >
                       Linkedin
                     </a>
                     <a
-                      href="https://www.facebook.com/"
+                      href="https://github.com/Arul0107"
                       target="_blank"
                       className="bg-maroon text-rose rounded-pill"
                     >
                       Github
                     </a>
                     <a
-                      href="https://www.instagram.com/"
+                      href="https://www.instagram.com/arulprakash_0107/"
                       target="_blank"
                       className="bg-dark-yellow text-yellow rounded-pill"
                     >
@@ -48,7 +48,7 @@ const Hero = () => {
 
                 <div className="hero-title-heading-wrapper">
                   <h1>
-                    <span>I Design</span> & Build <br />Unique Products
+                    <span>I Design</span> & Build <br />Unique Visuals and Graphics
                   </h1>
                 </div>
 

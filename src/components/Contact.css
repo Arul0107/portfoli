@@ -1,0 +1,298 @@
+.contact-area {
+  position: relative;
+  padding-top: 100px;
+}
+
+.contact-area .bg-text {
+  position: absolute;
+  top: 46px;
+  left: 28%;
+  font-size: 300px;
+  line-height: 120%;
+  color: #ffffff;
+  opacity: 0.02;
+  z-index: -1;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
+}
+.contact-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ffffff;  /* White text color */
+}
+
+.contact-title h5 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f1ff9d;  /* Light yellow for the subtitle */
+  margin-bottom: 10px;
+}
+
+.contact-title h2 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #ffffff;  /* White color for the main heading */
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.contact-title p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #f1ff9d;  /* Light yellow for the paragraph text */
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-title h2 {
+    font-size: 28px;  /* Smaller size on mobile */
+  }
+
+  .contact-title p {
+    font-size: 16px;  /* Adjust paragraph text size on mobile */
+  }
+}
+.contact-form-container {
+  background-color: #232327;  /* White background for the form */
+  padding: 30px;
+  border-radius: 10px;  /* Rounded corners for the form */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);  /* Subtle shadow effect */
+  margin-bottom: 40px;
+}
+
+/* For small screens, adjust padding and border-radius */
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.contact-form {
+  max-width: 600px;  /* Set a max width for the form */
+  margin: 0 auto;  /* Center the form */
+}
+
+.contact-form .user-details {
+  margin-bottom: 20px;
+}
+
+.contact-form .user-details .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.contact-form .ant-form-item-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;  /* Dark color for the labels */
+}
+
+.contact-form .ant-form-item-control-input input,
+.contact-form .ant-form-item-control-input textarea {
+  padding: 12px;  /* Add padding to inputs and textarea */
+  font-size: 16px;
+  border: 1px solid #ccc;  /* Light gray border */
+  border-radius: 5px;  /* Rounded corners */
+  width: 100%;  /* Full width for inputs */
+  transition: border-color 0.3s ease;  /* Smooth border color transition */
+}
+
+/* Input focus styles */
+.contact-form .ant-form-item-control-input input:focus,
+.contact-form .ant-form-item-control-input textarea:focus {
+  outline: none;  /* Remove default outline */
+}
+
+/* Textarea styling */
+.contact-form .ant-form-item-control-input textarea {
+  resize: vertical;  /* Allow users to resize textarea vertically */
+}
+
+/* Button styles */
+.contact-form .ant-btn {
+  background-color: #f1ff9d;  /* Light yellow background for the button */
+  color: #333;  /* Dark text color */
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;  /* Rounded corners */
+  padding: 15px;
+  border: none;  /* Remove default border */
+  width: 100%;
+  transition: background-color 0.3s ease;  /* Smooth background color transition */
+}
+
+.contact-form .ant-btn:focus,
+.contact-form .ant-btn:hover {
+  color: #333;  /* Ensure text stays dark */
+}
+
+/* Button loader styles */
+.contact-form .ant-btn[loading] {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .contact-form .ant-btn {
+    font-size: 14px;  /* Smaller font size for mobile devices */
+    padding: 12px;
+  }
+}
+
+.contact-area .circle-img {
+  position: absolute;
+  top: 230px;
+  left: 5%;
+  z-index: -1;
+}
+
+.contact-area .container {
+  padding-top: 279px;
+  }
+
+.contact-area .contact-title h5 {
+  font-weight: 700;
+}
+
+.contact-area .contact-title h2 {
+  line-height: 130%;
+  letter-spacing: -0.35px;
+}
+
+.contact-area .contact-title p {
+  font-size: 18px;
+}
+
+/* Contact Information Section (Left side) */
+.contact-area .contact-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 30px;
+}
+
+.contact-area .contact-meta-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-area .contact-meta-info ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.contact-area .contact-meta-info ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contact-area .contact-meta-icon {
+  margin-right: 15px;
+  font-size: 24px;
+  color: #f1ff9d;
+}
+
+.contact-area .contact-meta-info ul li strong {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Contact Form Section (Right side) */
+.contact-area .contact-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-area .contact-form {
+  max-width: 500px;
+  width: 100%;
+}
+
+.contact-area .user-details {
+  margin-bottom: 20px;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: initial;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  width: 100%;
+  padding: 5px 4px 10px 4px;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='tel']:focus,
+textarea:focus {
+  border-color: #f1ff9d;
+}
+
+/* Button */
+button[type="submit"] {
+  width: 100%;
+}
+
+/* Responsiveness */
+@media (max-width: 767px) {
+  .contact-area .container {
+    flex-direction: column;
+    padding-top: 50px;
+  }
+
+  .contact-area .contact-info {
+    padding-right: 0;
+  }
+
+  .contact-area .contact-form-container {
+    padding-left: 0;
+  }
+
+  .contact-area .contact-meta-info {
+    margin-top: 20px;
+  }
+}
+.contact-meta-info {
+  margin-top: 20px;
+}
+
+.contact-meta-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-meta-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contact-meta-info .contact-meta-icon {
+  font-size: 24px;
+  color: #f1ff9d;
+  margin-right: 10px;
+}
+
+.contact-meta-info span {
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.contact-info-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+

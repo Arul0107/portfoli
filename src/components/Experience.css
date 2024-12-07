@@ -10,7 +10,7 @@
 .experience-container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px;
 }
 
@@ -82,14 +82,33 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Styling for Smaller Screens */
-@media (max-width: 767px) {
+/* Responsive Styling for Extra Small Screens (320px, 375px, 425px) */
+@media (max-width: 425px) {
+  .experience-area .section-title {
+    font-size: 24px;
+  }
+
+  .counter-item h3 {
+    font-size: 24px;
+  }
+
+  .counter-item p {
+    font-size: 14px;
+  }
+
+  .experience-area .hr {
+    margin-top: 10px;
+  }
+}
+
+/* Responsive Styling for Small Screens (768px) */
+@media (max-width: 768px) {
   .experience-area .section-title {
     font-size: 28px;
   }
 
   .counter-item h3 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .counter-item p {
@@ -101,8 +120,8 @@
   }
 }
 
-/* Responsive Styling for Medium Screens */
-@media (min-width: 768px) and (max-width: 1024px) {
+/* Responsive Styling for Medium Screens (425px - 768px) */
+@media (min-width: 425px) and (max-width: 768px) {
   .experience-area .section-title {
     font-size: 30px;
   }
@@ -116,8 +135,8 @@
   }
 }
 
-/* Responsive Styling for Large Screens (Tablets and Desktops) */
-@media (min-width: 1025px) and (max-width: 1280px) {
+/* Responsive Styling for Larger Screens (1024px) */
+@media (min-width: 1024px) and (max-width: 1280px) {
   .experience-area .section-title {
     font-size: 50px;
   }
@@ -135,26 +154,7 @@
   }
 }
 
-/* Responsive Styling for Larger Screens (Large Desktops) */
-@media (min-width: 1281px) and (max-width: 1600px) {
-  .experience-area .section-title {
-    font-size: 60px;
-  }
-
-  .counter-item h3 {
-    font-size: 45px;
-  }
-
-  .counter-item p {
-    font-size: 22px;
-  }
-
-  .experience-area .hr {
-    margin-top: 35px;
-  }
-}
-
-/* Responsive Styling for Extra Large Screens (Full HD and 4K Monitors) */
+/* Responsive Styling for Extra Large Screens (1600px and above) */
 @media (min-width: 1601px) {
   .experience-area .section-title {
     font-size: 75px;
