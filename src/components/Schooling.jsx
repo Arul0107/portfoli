@@ -1,11 +1,9 @@
 import React from "react";
-import "./Schooling.css";
+import Typing from "react-typing-effect";
 import profilePic from "../assets/images/hero/profile-picture.png";
-
-// Importing images directly
-import dot from "../assets/images/skills/dot-pattern.svg"; // Update with your image path
-import lineShape from "../assets/images/schooling/style-1.png";
+import dot from "../assets/images/skills/dot-pattern.svg";
 import star from "../assets/images/hero/star.svg";
+import "./Schooling.css";
 
 const timeline = [
   {
@@ -33,25 +31,30 @@ const timeline = [
 const Schooling = () => {
   return (
     <section className="schooling-area mt-95" id="about">
-      <div className="container">
+      <div className="schooling-container">
         <h2 className="section-title">About</h2>
       </div>
 
-      <div className="container-wrapper">
+      <div className="schooling-container-wrapper">
         <div className="personal-iden">
           <img className="profile-pic" src={profilePic} alt="profile picture" />
           <div className="personal-info">
-            <h2  className="schol-h2" >Arul Prakash V</h2>
-            
-          </div>
+            {/* First Typing Effect */}
+            <Typing speed={100} eraseDelay={1000} cursor="|" text="Arul Prakash.V" className="schol-h2" />
+            <br />
+            {/* Second Typing Effect */}
+            <div className="schol-h2">
+  <Typing speed={100} eraseDelay={1000} cursor="|" text="UI/UX Designer" />
+  <Typing speed={50} eraseDelay={1000}  text=" Graphic Designer" cursor="|"/>
+</div>          </div>
         </div>
-        
-        <div className="container">
+
+        <div className="schooling-container">
+          <span className="hr-tit">
+            <img src={dot} alt="skills" className="img-dot" />
+          </span>
           <div className="section-title-wrapper">
-            <span className="hr-tit">
-              <img src={dot} alt="skills" className="img-dot" />
-            </span>
-            <h2 className="schol-h2">Schooling & Experience</h2>
+            <h4 className="schol-h2">Schooling&Experience</h4>
           </div>
 
           <div className="row">

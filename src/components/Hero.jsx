@@ -11,7 +11,6 @@ import star from '../assets/images/hero/star.svg';
 const Hero = () => {
   return (
     <section className="hero-area" id="home">
-      <img className="pattern" src={pattern} alt="pattern" />
       <div className="container">
         <Row align="middle" justify="center">
           {/* Left Side: Text and Buttons */}

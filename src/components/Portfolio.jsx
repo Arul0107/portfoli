@@ -38,6 +38,7 @@ const projectData = [
     title: "NEURO KNOT",
     description: "A college symposium website built with web design technologies.",
     image: project4Image,
+    demoLink: "https://neuroknot--2k24.web.app/",
   },
   {
     id: 4,
@@ -52,6 +53,14 @@ const projectData = [
     title: "Local Nest",
     description: "A MERN stack-based app for local business management.",
     image: project7Image,
+  },
+  {
+    id: 6,
+    category: "Fun",
+    title: "M2M",
+    description: "React-based fun game.",
+    image: project8Image,
+    demoLink: "https://m2m-fun.netlify.app/"
   },
 ];
 
@@ -74,7 +83,6 @@ const Portfolio = () => {
     return projectData.filter((project) => project.category === category);
   };
 
-  // Function to display description as list if it's an array
   const renderDescription = (description) => {
     if (Array.isArray(description)) {
       return (
@@ -90,12 +98,10 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" className="project-area pt-135">
-      <div className=" port-container">
+      <div className="port-container">
         <div className="section-title">
-          <h2>Latest Project</h2>
-          <br />
-
-          <p className="h-p">Best Of Our Works</p>
+          <h2>Latest Projects</h2>
+          <p className="h-p">Best of Our Works</p>
         </div>
 
         <div className="section-title-wrapper">
@@ -114,41 +120,40 @@ const Portfolio = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={selectedCategory === category ? "active" : ""}
                 >
-                  {category === "*" ? "All Project" : category.replace("-", " ")}
+                  {category === "*" ? "All Projects" : category.replace("-", " ")}
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </div>
-      <div className="portfoli-modal">
-  {selectedProject && (
-    <Modal
-      title={selectedProject.title}
-      visible={true}
-      onCancel={handleModalClose}
-      footer={[""]}
-      style={{ backgroundColor: "#222", color: "#fff" }} // Modal background and text color
-      bodyStyle={{ backgroundColor: "#222", color: "#fff" }} // Body style for the modal content
-      titleStyle={{ color: "#fff" }} // Title style for the modal header
-    >
-      <img
-        src={selectedProject.image}
-        alt={selectedProject.title}
-        style={{
-          width: "100%",
-          borderRadius: "8px", // Optional: to give a rounded corner to the image
-        }}
-      />
-      <p style={{ color: "#fff" }}>{selectedProject.description}</p> {/* Description text color */}
-    </Modal>
-  )}
-</div>
 
-      <div className="portfoli-card-main">
-        <Row gutter={[19]} className="portfoli-card-main">
+      {selectedProject && (
+        <Modal
+          title={selectedProject.title}
+          visible={true}
+          onCancel={handleModalClose}
+          footer={null}
+          style={{ backgroundColor: "#222", color: "#fff" }}
+          bodyStyle={{ backgroundColor: "#222", color: "#fff" }}
+          titleStyle={{ color: "#fff" }}
+        >
+          <img
+            src={selectedProject.image}
+            alt={selectedProject.title}
+            style={{
+              width: "100%",
+              borderRadius: "8px",
+            }}
+          />
+          {renderDescription(selectedProject.description)}
+        </Modal>
+      )}
+
+      <div className="portfolio-card-main">
+        <Row gutter={[16, 16]}>
           {filterProjects(selectedCategory).map((project) => (
-            <Col span={7} key={project.id}>
+            <Col xs={24} sm={12} md={8} key={project.id}>
               <Card
                 hoverable
                 cover={
@@ -160,11 +165,24 @@ const Portfolio = () => {
                 }
                 onClick={() => handleModalOpen(project)}
                 className="portfolio-card"
-              ></Card>
-              <div className="project-title-wrapper">
-                <h5>{project.title}</h5>
-                <p>{project.description}</p>
-              </div>
+              >
+                <div className="project-title-wrapper">
+                  <h5>{project.title}</h5>
+                  <p>{project.description}</p>
+                  {project.demoLink && (
+                  <Button
+                    type="link"
+                    href={project.demoLink}
+                    target="_blank"
+                    icon={<NodeExpandOutlined />}
+                    style={{ padding: "0", fontSize: "14px", color: "#1890ff" }}
+                  >
+                    View Demo
+                  </Button>
+                )}
+                </div>
+               
+              </Card>
             </Col>
           ))}
         </Row>

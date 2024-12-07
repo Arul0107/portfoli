@@ -39,7 +39,7 @@
 }
 
 .schol-h2{
-    font-size: 50px;
+    font-size: 30px;
     color: aliceblue;
   font-style: normal;
   font-weight: 500;
@@ -109,8 +109,8 @@
   
   /* Style for the profile image */
   .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -147,8 +147,7 @@
   }
   
    .profile-pic {
-    width: 25rem;
-    height: 25rem;
+    
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

@@ -1,3 +1,7 @@
+/* General Project Area Styles */
+.project-area {
+    padding: 10px;
+}
 .project-area .h-p {
     color: #f1ff9d !important;
     text-align: center;
@@ -5,40 +9,41 @@
     font-weight: 600;
     margin-bottom: 20px;
 }
+
 /* Section Title Styles */
 .section-title {
     text-align: center;
-    margin:0px 0 0 40px; /* Space below the title */
-  }
-  
-  .section-title h2 {
-    text-transform: uppercase;
+    margin: 0px 0 0 40px; /* Space below the title */
+}
 
+.section-title h2 {
+    text-transform: uppercase;
     font-size: 36px; /* Main title font size */
     font-weight: bold; /* Bold font weight */
     color: #0c484b; /* Use your primary color */
     margin-bottom: 10px; /* Space below the main title */
     letter-spacing: 1px;
-  }
-  
-  .section-title .h-p {
+}
+
+.section-title .h-p {
     font-size: 20px; /* Subtitle font size */
     color: #777; /* Subtitle color */
     font-weight: normal;
     margin-top: 0;
-  }
-  
-  /* Add some responsiveness */
-  @media (max-width: 768px) {
+}
+
+/* Add some responsiveness */
+@media (max-width: 768px) {
     .section-title h2 {
-      font-size: 28px;
+        font-size: 28px; /* Reduce font size on smaller screens */
     }
-  
+
     .section-title .h-p {
-      font-size: 18px;
+        font-size: 18px;
     }
-  }
-  
+}
+
+/* Light Theme Adjustments */
 #light .project-area .h-p {
     color: #757980;
 }
@@ -58,9 +63,11 @@
     text-align: center;
     margin-top: 20px;
 }
-.portfoli-card-main{
+
+.portfolio-card-main {
     justify-content: center;
 }
+
 .project-area .project-menu ul {
     display: flex;
     justify-content: center;
@@ -68,9 +75,11 @@
     margin: 0;
     list-style-type: none;
 }
-.ant-card .ant-card-body{
+
+.ant-card .ant-card-body {
     padding: 0px;
 }
+
 .project-area .project-menu ul li {
     padding: 10px 20px;
     border-radius: 100px;
@@ -160,25 +169,25 @@
 }
 
 .project-area .portfolio-card {
-  border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #4645452e;
-  transition: transform 0.3s ease;
-  margin-left: 0;
-  margin-right: 0;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #4645452e;
+    transition: transform 0.3s ease;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .project-area .portfolio-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .project-area .portfolio-image:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .project-area .portfolio-card:hover {
@@ -196,7 +205,9 @@
 .project-area .portfolio-image:hover {
     transform: scale(1.05);
 }
-
+.project-title-wrapper{
+    padding: 10px;
+}
 /* Card Title and Description */
 .project-area .project-title-wrapper h5 {
     font-size: 1.3rem;
@@ -211,8 +222,9 @@
     margin-top: 5px;
 }
 
-/* Responsive Layout */
+/* Responsive Layout for Project Area */
 @media (max-width: 768px) {
+    /* Responsive grid for portfolio cards */
     .project-area .row {
         grid-template-columns: 1fr 1fr; /* Two columns for medium screens */
     }
@@ -224,8 +236,20 @@
     .project-area .portfolio-image {
         height: 180px; /* Slightly smaller images on smaller screens */
     }
+
+    /* Adjust button size and layout */
+    .project-area .round-btn-wrapper {
+        margin-top: 30px;
+    }
+
+    .project-area .round-btn {
+        height: 120px;
+        width: 120px;
+        font-size: 1.3rem;
+    }
 }
 
+/* For Small Mobile Screens */
 @media (max-width: 480px) {
     .project-area .row {
         grid-template-columns: 1fr; /* Single column for small screens */
@@ -233,6 +257,31 @@
 
     .project-area .portfolio-image {
         height: 150px; /* Smaller image size on small screens */
+    }
+
+    .project-area .round-btn {
+        height: 100px;
+        width: 100px;
+        font-size: 1rem;
+    }
+
+    /* Adjust section title for small screens */
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+    .project-area .project-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-area .project-menu ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .project-area .h-p {
+        font-size: 1.6rem;
     }
 }
 
@@ -250,12 +299,16 @@
 body {
     overflow-x: hidden;
 }
-.ant-modal .ant-modal-content{
-    background-color:#1f1f1f ;
-}
-.ant-modal .ant-modal-header{
+
+/* Modal styles */
+.ant-modal .ant-modal-content {
     background-color: #1f1f1f;
 }
-.ant-modal .ant-modal-title{
+
+.ant-modal .ant-modal-header {
+    background-color: #1f1f1f;
+}
+
+.ant-modal .ant-modal-title {
     color: #f1ff9d !important;
 }

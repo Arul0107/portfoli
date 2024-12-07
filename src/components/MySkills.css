@@ -6,17 +6,18 @@
   min-height: 100vh; /* Ensures the section fills the entire viewport */
 }
 
-.skills-area .container {
+.skills-area .skills-wrapper {
   width: 100%;
   max-width: 1200px; /* Adjust this to your preferred max-width */
   padding: 0 15px; /* Add padding for responsiveness */
 }
 
-.skill-h2 {
-  font-size: 68px;
+.skill-h1 {
+  font-size: 40px;
   font-style: normal;
   font-weight: 500;
-  line-height: 80px;
+  letter-spacing: 2px;
+  line-height: 40px;
   color: #f1ff9d;
   position: relative; /* Make the h2 position relative for absolute positioning of the dot */
 }
@@ -59,11 +60,11 @@
 
 .skills-area .skills-heading {
   color: #ffffff;
-  margin-bottom: 20px;
-  font-size: 50px;
+  width: 550px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 500;
-  line-height: 80px;
+  letter-spacing: 1px;
 }
 
 .skills-area .skills-progress-wrapper {
@@ -126,7 +127,7 @@
 }
 
 .skill-img-btn-wrapper img {
-  width: 550px;
+  width: 250px;
   height: 55;
 }
 

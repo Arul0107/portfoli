@@ -42,63 +42,62 @@ const MySkills = () => {
 
   return (
     <section id="Skills" className="skills-area pt-95">
-      <div className="container">
-        <Row gutter={24} justify="center" align="middle">
-          {/* Left Column: Skill Descriptions and Progress */}
-          <Col xl={12} md={12} sm={24} xs={24}>
-            <div className="skills-info">
-              <div className="section-title-wrapper">
-                <span className="hr">
-                  {" "}
-                  <img src={dot} alt="skills" className="img-dot" />
-                </span>
-                <h2 className="skill-h2">My Professional</h2>
-              </div>
-              <h2 className="skills-heading">
-                Background Skills And Accomplishments
-              </h2>
-              <p className="pe-xl-5 me-xl-4">
-               
-              </p>
-
-              <div className="skills-progress-wrapper">
-                {skillsData.map((skill) => (
-                  <div key={skill.id} className="skills pe-xl-5 me-xl-5">
-                    <div className="skill-text">
-                      <p>{skill.title}</p>
-                      <p>
-                        <span>{skill.percentage}</span>%
-                      </p>
-                    </div>
-                    <div className="progress-bg-line">
-                      <div
-                        className="progress-animated-line"
-                        style={{
-                          width: `${skill.percentage}%`,
-                          animation: isLoaded
-                            ? "progressBar 2s ease-out forwards"
-                            : "none",
-                          "--progress-width": `${skill.percentage}%`, // Dynamically set width
-                        }}
-                      >
-                        <span></span>
-                      </div>
+    <div className="skills-wrapper">
+      <Row gutter={24} justify="center" align="middle">
+        {/* Left Column: Skill Descriptions and Progress */}
+        <Col xl={12} md={12} sm={24} xs={24}>
+          <div className="skills-info">
+            <div className="section-title-wrapper">
+              <span className="hr">
+                {" "}
+                <img src={dot} alt="skills" className="img-dot" />
+              </span>
+              <h2 className="skill-h1">MyProfessional</h2>
+            </div>
+            <h5 className="skills-heading">
+              Background Skills<br />And Accomplishments
+            </h5>
+  
+            <div className="skills-progress-wrapper">
+              {skillsData.map((skill) => (
+                <div key={skill.id} className="skills pe-xl-5 me-xl-5">
+                  <div className="skill-text">
+                    <p>{skill.title}</p>
+                    <p>
+                      <span>{skill.percentage}</span>%
+                    </p>
+                  </div>
+                  <div className="progress-bg-line">
+                    <div
+                      className="progress-animated-line"
+                      style={{
+                        width: `${skill.percentage}%`,
+                        animation: isLoaded
+                          ? "progressBar 2s ease-out forwards"
+                          : "none",
+                        "--progress-width": `${skill.percentage}%`, // Dynamically set width
+                      }}
+                    >
+                      <span></span>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          </Col>
+          </div>
+        </Col>
+  
+        {/* Right Column: Image Section */}
+        <Col xl={12} md={12} sm={24} xs={24}>
+          <div className="skill-img-btn-wrapper position-relative">
+            <img src={skillImage} alt="skills" className="img-fluid" />
+          </div>
+        </Col>
+      </Row>
+    </div>
+  </section>
+  
 
-          {/* Right Column: Image Section */}
-          <Col xl={12} md={12} sm={24} xs={24}>
-            <div className="skill-img-btn-wrapper position-relative">
-              <img src={skillImage} alt="skills" className="img-fluid" />
-            </div>
-          </Col>
-        </Row>
-      </div>
-    </section>
   );
 };
 

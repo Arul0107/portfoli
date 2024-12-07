@@ -7,12 +7,13 @@
 }
 
 /* Container Styling */
-.experience-area .container {
-  max-width: 90%; /* Ensure container takes full width of its parent */
+.experience-container {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
-  padding-bottom: 20px;
+  padding: 20px;
 }
+
 .label{
   color: #f1ff9d !important;
 }
@@ -35,7 +36,7 @@
   top: 50%;
   background-color: #ffffff;
   opacity: 0.58;
-  left: 45; /* Align the line to the left */
+  left: 45%; /* Align the line to the left */
 }
 
 /* Counter Items */
@@ -100,6 +101,7 @@
   }
 }
 
+/* Responsive Styling for Medium Screens */
 @media (min-width: 768px) and (max-width: 1024px) {
   .experience-area .section-title {
     font-size: 30px;
@@ -111,5 +113,62 @@
 
   .counter-item p {
     font-size: 17px;
+  }
+}
+
+/* Responsive Styling for Large Screens (Tablets and Desktops) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .experience-area .section-title {
+    font-size: 50px;
+  }
+
+  .counter-item h3 {
+    font-size: 40px;
+  }
+
+  .counter-item p {
+    font-size: 20px;
+  }
+
+  .experience-area .hr {
+    margin-top: 30px;
+  }
+}
+
+/* Responsive Styling for Larger Screens (Large Desktops) */
+@media (min-width: 1281px) and (max-width: 1600px) {
+  .experience-area .section-title {
+    font-size: 60px;
+  }
+
+  .counter-item h3 {
+    font-size: 45px;
+  }
+
+  .counter-item p {
+    font-size: 22px;
+  }
+
+  .experience-area .hr {
+    margin-top: 35px;
+  }
+}
+
+/* Responsive Styling for Extra Large Screens (Full HD and 4K Monitors) */
+@media (min-width: 1601px) {
+  .experience-area .section-title {
+    font-size: 75px;
+  }
+
+  .counter-item h3 {
+    font-size: 50px;
+  }
+
+  .counter-item p {
+    font-size: 24px;
+  }
+
+  .experience-area .hr {
+    margin-top: 50px;
   }
 }

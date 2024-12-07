@@ -11,25 +11,25 @@ const Navbar = () => {
     };
 
     return (
-        <header className="site-header">
-            <div className="container">
+        <header className="navbar">
+            <div className="navbar-container">
                 {/* Brand Logo */}
-                <div className="brand-logo">
+                <div className="navbar-logo">
                     <a href="#home">
-                        <img src={logo} alt="logo" className="logo" />
+                        <img src={logo} alt="logo" className="navbar-logo-img" />
                     </a>
                 </div>
 
-                {/* Menu */}
-                <nav className={`menu ${isMobile ? 'show' : ''}`}>
-                    <ul className="menu-items">
+                {/* Navigation Menu */}
+                <nav className={`navbar-menu ${isMobile ? 'show' : ''}`}>
+                    <ul className="navbar-menu-items">
                         <li>
                             <Link 
                                 to="home" // Target section ID
                                 smooth={true} // Smooth scrolling
                                 duration={1000} // Scroll duration in ms
                                 offset={-70} // Adjust scroll offset if needed
-                                className="nav-link"
+                                className="navbar-link"
                             >
                                 Home
                             </Link>
@@ -40,18 +40,18 @@ const Navbar = () => {
                                 smooth={true}
                                 duration={1000}
                                 offset={-70}
-                                className="nav-link"
+                                className="navbar-link"
                             >
                                 Portfolio
                             </Link>
                         </li>
                         <li>
                             <Link 
-                                to="Skills"
+                                to="skills"
                                 smooth={true}
                                 duration={1000}
                                 offset={-70}
-                                className="nav-link"
+                                className="navbar-link"
                             >
                                 Skills
                             </Link>
@@ -62,7 +62,7 @@ const Navbar = () => {
                                 smooth={true}
                                 duration={1000}
                                 offset={-70}
-                                className="nav-link"
+                                className="navbar-link"
                             >
                                 About
                             </Link>
@@ -73,7 +73,7 @@ const Navbar = () => {
                                 smooth={true}
                                 duration={1000}
                                 offset={-70}
-                                className="nav-link"
+                                className="navbar-link"
                             >
                                 Contact
                             </Link>
@@ -81,14 +81,14 @@ const Navbar = () => {
                     </ul>
                 </nav>
 
-                {/* Let's Talk Button */}
-                <div className={`contact-btn ${isMobile ? 'hide' : ''}`}>
-                    <button className="theme-btn">Let's Talk</button>
+                {/* Contact Button */}
+                <div className={`navbar-contact-btn ${isMobile ? 'hide' : ''}`}>
+                    <button className="navbar-theme-btn">Let's Talk</button>
                 </div>
 
-                {/* Mobile menu toggle */}
-                <div className="mobile-menu-trigger" onClick={handleMenuToggle}>
-                    <span className="burger-icon"></span>
+                {/* Mobile Menu Toggle */}
+                <div className="navbar-mobile-menu-trigger" onClick={handleMenuToggle}>
+                    <span className="navbar-burger-icon"></span>
                 </div>
             </div>
         </header>

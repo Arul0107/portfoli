@@ -1,20 +1,20 @@
 /* Basic Styles */
-.site-header {
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 20px 40px;
-  background-color: #45454da7; /* Set background color */
+  background-color: #45454da7;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease; /* Smooth transition for header background and padding */
+  transition: all 0.3s ease;
 }
 
-.container {
+.navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,61 +22,61 @@
 }
 
 /* Brand Logo */
-.brand-logo img {
-  max-width: 120px; /* Adjust logo size */
-  transition: all 0.3s ease; /* Smooth transition for logo resizing */
+.navbar-logo img {
+  max-width: 120px;
+  transition: all 0.3s ease;
 }
 
-.site-header:hover .brand-logo img {
-  transform: scale(1.05); /* Logo grows slightly on hover */
+.navbar:hover .navbar-logo img {
+  transform: scale(1.05);
 }
 
 /* Menu Styles */
-.menu {
+.navbar-menu {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-grow: 1;
 }
 
-.menu-items {
+.navbar-menu-items {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-.menu-items li {
-  margin-right: 30px; /* Space between menu items */
-  transition: transform 0.3s ease; /* Smooth hover effect for menu items */
+.navbar-menu-items li {
+  margin-right: 30px;
+  transition: transform 0.3s ease;
 }
 
-.menu-items li:hover {
-  transform: translateY(-5px); /* Slight lift effect on hover */
+.navbar-menu-items li:hover {
+  transform: translateY(-5px);
 }
 
-.menu-items li a {
-  font-size: 18px; /* Increase font size */
-  color: #fff; /* Change text color to white */
+.navbar-menu-items li a {
+  font-size: 18px;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s, transform 0.3s; /* Transition for text color and hover effect */
+  transition: color 0.3s, transform 0.3s;
 }
 
-.menu-items li a:hover {
-  color: #e1a66f; /* Accent color */
-  transform: scale(1.05); /* Slight enlarge effect on hover */
+.navbar-menu-items li a:hover {
+  color: #e1a66f;
+  transform: scale(1.05);
 }
 
 /* Let's Talk Button */
-.contact-btn {
+.navbar-contact-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 20px;
 }
 
-.theme-btn {
+.navbar-theme-btn {
   background-color: rgba(207, 221, 159, 0.067);
   color: rgb(255, 255, 255);
   border-radius: 25px;
@@ -84,22 +84,22 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s ease; /* Smooth transition for button hover */
+  transition: background-color 0.3s, transform 0.3s ease;
 }
 
-.theme-btn:hover {
+.navbar-theme-btn:hover {
   background-color: #fff8b6;
-  transform: translateY(-3px);  color: rgb(0, 0, 0);
-
+  transform: translateY(-3px);
+  color: rgb(0, 0, 0);
 }
 
 /* Mobile and Toggle Menu */
-.mobile-menu-trigger {
+.navbar-mobile-menu-trigger {
   display: none;
   cursor: pointer;
 }
 
-.burger-icon {
+.navbar-burger-icon {
   width: 30px;
   height: 3px;
   background-color: #fff;
@@ -107,8 +107,8 @@
   transition: 0.3s ease;
 }
 
-.burger-icon:before,
-.burger-icon:after {
+.navbar-burger-icon:before,
+.navbar-burger-icon:after {
   content: '';
   position: absolute;
   width: 30px;
@@ -117,16 +117,16 @@
   transition: 0.3s ease;
 }
 
-.burger-icon:before {
+.navbar-burger-icon:before {
   top: -8px;
 }
 
-.burger-icon:after {
+.navbar-burger-icon:after {
   top: 8px;
 }
 
 /* Mobile menu */
-.menu.show {
+.navbar-menu.show {
   display: block;
   width: 100%;
   background-color: #222327;
@@ -136,89 +136,168 @@
   padding: 10px 0;
 }
 
-.menu-items {
+.navbar-menu-items {
   display: block;
   text-align: center;
 }
 
-.menu-items li {
+.navbar-menu-items li {
   margin: 15px 0;
 }
 
-.menu-items li a {
+.navbar-menu-items li a {
   font-size: 20px;
 }
 
 /* Hide the Let's Talk button in mobile view */
-.contact-btn.hide {
+.navbar-contact-btn.hide {
   display: none;
 }
 
-@media (max-width: 768px) {
-  .mobile-menu-trigger {
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 20px 30px;
+  }
+
+  .navbar-logo img {
+    max-width: 110px;
+  }
+
+  .navbar-menu-items li {
+    margin-right: 20px;
+  }
+
+  .navbar-menu-items li a {
+    font-size: 16px;
+  }
+
+  .navbar-contact-btn {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar-mobile-menu-trigger {
     display: block;
   }
 
-  .menu {
+  .navbar-menu {
     display: none;
   }
 
-  .menu.show {
+  .navbar-menu.show {
     display: block;
   }
 
-  .menu-items {
+  .navbar-menu-items {
     display: block;
     text-align: center;
   }
 
-  .menu-items li {
+  .navbar-menu-items li {
     margin: 15px 0;
   }
 
-  .contact-btn {
-    display: block;
-    margin-left: 0;
-    text-align: center;
+  .navbar {
+    padding: 15px 20px;
   }
 
-  .site-header {
-    padding: 15px 20px; /* Reduced padding for mobile view */
-  }
-
-  /* Adjust the brand logo size for mobile */
-  .brand-logo img {
+  .navbar-logo img {
     max-width: 100px;
   }
 
-  .burger-icon {
+  .navbar-burger-icon {
     background-color: #e1a66f;
+  }
+
+  .navbar-contact-btn {
+    display: block;
+    text-align: center;
+    margin-left: 0;
   }
 }
 
-/* Ensuring Menu is Row Format for Desktop View */
+@media (max-width: 768px) {
+  .navbar-mobile-menu-trigger {
+    display: block;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .navbar-logo img {
+    max-width: 90px;
+  }
+
+  .navbar-menu-items {
+    display: block;
+    text-align: center;
+  }
+
+  .navbar-menu-items li {
+    margin: 12px 0;
+  }
+
+  .navbar-menu-items li a {
+    font-size: 18px;
+  }
+
+  .navbar-contact-btn {
+    display: block;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .navbar-burger-icon {
+    background-color: #e1a66f;
+  }
+
+  .navbar-contact-btn.hide {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+
+  .navbar-menu-items li {
+    margin: 10px 0;
+  }
+
+  .navbar-menu-items li a {
+    font-size: 16px;
+  }
+
+  .navbar-logo img {
+    max-width: 80px;
+  }
+
+  .navbar-theme-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .navbar-contact-btn {
+    display: none;
+  }
+}
+
 @media (min-width: 769px) {
-  .menu-items {
-    display: flex;  /* Ensure horizontal layout for larger screens */
-    justify-content: center; /* For center-alignment on desktop */
+  .navbar-menu-items {
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
 
-  .menu-items li {
-    margin-right: 30px; /* Space between menu items */
+  .navbar-menu-items li {
+    margin-right: 30px;
   }
 
-  .mobile-menu-trigger {
-    display: none; /* Hide burger icon on larger screens */
+  .navbar-mobile-menu-trigger {
+    display: none;
   }
-}
-
-/* General animations for consistency */
-.site-header {
-  transition: background-color 0.3s ease;
-}
-
-.menu-items li a,
-.menu-items li {
-  transition: transform 0.3s ease, color 0.3s ease;
 }

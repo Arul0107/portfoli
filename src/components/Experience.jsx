@@ -14,7 +14,7 @@ const experienceData = [
 const Experience = () => {
   return (
     <section className="experience-area">
-      <div className="container">
+      <div className="experience-container">
         <h2 className="section-title">Professional Experience</h2>
       </div>
       <Row gutter={[32, 32]} justify="center">
