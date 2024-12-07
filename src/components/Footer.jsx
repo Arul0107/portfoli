@@ -57,7 +57,7 @@ const Footer = () => {
               >
                 <InstagramOutlined className="social-icon" />
               </a>
-              <a
+              <a className="new"
                 href="https://www.linkedin.com/in/arulprakash-v-4b537826a/"
                 target="_blank"
                 rel="noopener noreferrer"
