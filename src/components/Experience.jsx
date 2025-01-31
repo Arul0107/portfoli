@@ -6,7 +6,6 @@ import './Experience.css';
 // Example JSON data for counters
 const experienceData = [
   { id: 1, value: 10, label: 'Project Complete' },
-  { id: 2, value: 7.8, label: 'Happy Clients' },  // Change value to 7.8
   { id: 3, value: 12, label: 'Certificate' },
   { id: 4, value: 5, label: 'Internships' },
 ];
