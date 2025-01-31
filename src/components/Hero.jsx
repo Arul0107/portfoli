@@ -59,7 +59,7 @@ const Hero = () => {
 
                 <div className="hero-btn-wrapper">
                   <Button className="theme-btn-one">Hy! I'm Arul</Button>
-                  <a href="/ar resume.pdf" download="Arul_Resume.pdf">
+                  <a href="/arulprakashv0107@gmail.com.pdf" download="Arul_Resume.pdf">
                     <Button className="theme-btn-two">Download CV</Button>
                   </a>
                 </div>
