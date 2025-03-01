@@ -15,30 +15,28 @@ const Hero = () => {
           {/* Text Content */}
           <Col xs={24} md={12} className="hero-text">
             <div className="content-wrapper">
-              <h4 className="gradient-subtitle">
-                Creative Designer & Developer
-              </h4>
-
+              <h4 className="gradient-subtitle">Creative Designer & Developer</h4>
+              
               <div className="social-links">
                 <div className="animated-arrow">
                   <img src={longArrow} alt="scroll indicator" />
                 </div>
-                <Button
-                  href="https://linkedin.com"
+                <Button 
+                  href="https://linkedin.com" 
                   className="social-btn linkedin"
                   shape="round"
                 >
                   <span>LinkedIn</span>
                 </Button>
-                <Button
-                  href="https://github.com"
+                <Button 
+                  href="https://github.com" 
                   className="social-btn github"
                   shape="round"
                 >
                   <span>GitHub</span>
                 </Button>
-                <Button
-                  href="https://instagram.com"
+                <Button 
+                  href="https://instagram.com" 
                   className="social-btn instagram"
                   shape="round"
                 >
@@ -48,18 +46,10 @@ const Hero = () => {
 
               <h1 className="animated-heading">
                 <span className="highlight">Design</span> Innovator
-                <br />& Digital
+                <br />& Digital 
                 <span className="gradient-text"> Creator</span>
               </h1>
 
-<<<<<<< HEAD
-                <div className="hero-btn-wrapper">
-                  <Button className="theme-btn-one">Hy! I'm Arul</Button>
-                  <a href="/arulprakashv0107@gmail.com.pdf" download="Arul_Resume.pdf">
-                    <Button className="theme-btn-two">Download CV</Button>
-                  </a>
-                </div>
-=======
               <div className="cta-buttons">
                 <Button className="primary-cta" shape="round">
                   Let's Connect
@@ -67,9 +57,7 @@ const Hero = () => {
                 <a href="/arulprakashv0107.pdf" download="Arul_Resume.pdf">
                   <Button className="secondary-cta" shape="round">
                     Download CV
-                  </Button>{" "}
-                </a>
->>>>>>> 375d8e0 (Initial commit)
+                  </Button>{" "}</a>
               </div>
             </div>
           </Col>
@@ -81,17 +69,17 @@ const Hero = () => {
                 <img src={star} alt="decorative star" />
               </div>
               <div className="image-wrapper hover-effect">
-                <img
-                  src={profilePic}
-                  alt="Arul Prakash"
-                  className="profile-image"
+                <img 
+                  src={profilePic} 
+                  alt="Arul Prakash" 
+                  className="profile-image" 
                 />
-                {/* <div className="animated-border"></div> */}
+                <div className="animated-border"></div>
               </div>
-              <img
-                src={stylishArrow}
-                alt="decorative arrow"
-                className="floating-arrow"
+              <img 
+                src={stylishArrow} 
+                alt="decorative arrow" 
+                className="floating-arrow" 
               />
             </div>
           </Col>
