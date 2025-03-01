@@ -1,146 +1,160 @@
-.skills-area {
+/* MySkills.css */
+:root {
+  --primary: #f1ff9d;
+  --secondary: #0c484b;
+  --background: #1a1a1a;
+  --text: #ffffff;
+  --card-bg: #262626;
+}
+
+.skills-container {
+  padding: 4rem 2rem;
+  background: var(--background);
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Ensures the section fills the entire viewport */
+  overflow: hidden;
 }
 
-.skills-area .skills-wrapper {
-  width: 100%;
-  max-width: 1200px; /* Adjust this to your preferred max-width */
-  padding: 0 15px; /* Add padding for responsiveness */
+.skills-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
 }
 
-.skill-h1 {
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 2px;
-  line-height: 40px;
-  color: #f1ff9d;
-  position: relative; /* Make the h2 position relative for absolute positioning of the dot */
+.section-header {
+  position: relative;
+  margin-bottom: 3rem;
 }
 
-.skills-area .skills-info {
-  padding-left: 20px;
+.dot-pattern {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 120px;
+  opacity: 0.3;
 }
 
-.skills-area .section-title-wrapper {
-  position: relative; /* Make the wrapper relative to position the dot image over it */
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--text);
+  line-height: 1.2;
+  position: relative;
 }
 
-.skills-area .section-title-wrapper .hr {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin:20px   0;
-  /* Adjust this to position the dot over the hr line */
-  position: relative; /* Make the line position relative to be the reference point for the dot */
+.highlight {
+  color: var(--primary);
 }
 
-.skills-area .section-title-wrapper .hr::before {
-  content: "";
-  display: block;
-  width: 80%; /* Adjust width of the line */
-  height: 2px;
-  background-color: #f1ff9d; /* Line color */
-  margin-right: 70px;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
-.skills-area .section-title-wrapper .img-dot {
-  position: absolute; /* Absolute positioning for the dot image */
-  top: -50px; /* Adjust this to position the dot over the hr line */
-  left:-91px; /* Ensure it starts from the left of the h2 text */
-  background-image: url('../assets/images/skills/dot-pattern.svg'); /* Your dot image */
-  background-size: cover;
-  background-position: center;
+.skill-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
 }
 
-.skills-area .skills-heading {
-  color: #ffffff;
-  width: 550px;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 1px;
+.skill-card:hover {
+  transform: translateY(-5px);
 }
 
-.skills-area .skills-progress-wrapper {
-  margin-top: 20px;
-}
-
-.skills-progress-wrapper .skill-text {
+.skill-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skill-header h3 {
+  color: var(--text);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.percentage {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.progress-container {
+  position: relative;
   width: 100%;
+  height: 100px;
 }
 
-.skills-progress-wrapper .skill-text p {
-  color: #ffffff;
+.progress-circle {
+  width: 100px;
+  height: 100px;
+  transform: rotate(-90deg);
 }
 
-.skills-progress-wrapper .progress-bg-line {
-  background-color: rgba(255, 255, 255, 0.1);
-  height: 5px;
-  width: 100%;
-  border-radius: 100px;
-  margin-bottom: 35px;
+.progress-background {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 8;
 }
 
-/* Initial state of the progress bar */
-.skills-progress-wrapper .progress-bg-line div {
-  background-color: #f1ff9d;
-  height: 5px;
-  width: 0%;
-  border-radius: 100px;
-  opacity: 1;
-  animation: progressBar 2s ease-out forwards; /* Animation for progress bar */
+.progress-fill {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  transition: stroke-dashoffset 1.5s ease-out;
 }
 
-/* Smooth animation for the progress bar */
-@keyframes progressBar {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: var(--progress-width); /* This will be dynamically set in React */
-  }
+.skills-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.skills-progress-wrapper .progress-bg-line span {
-  height: 24px;
-  width: 24px;
-  border: 3px solid #f1ff9d;
-  background-color: #232327;
-  border-radius: 50%;
-  float: right;
-  margin-top: -10px;
-  margin-right: -20px;
+.skills-visual img {
+  max-width: 100%;
+  height: auto;
+  z-index: 1;
 }
 
-.skill-img-btn-wrapper .big-round-shape {
+.glow-effect {
   position: absolute;
-  left: 0;
-  bottom: 15px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(241, 255, 157, 0.2) 0%, transparent 70%);
+  filter: blur(50px);
+  z-index: 0;
 }
 
-.skill-img-btn-wrapper img {
-  width: 250px;
-  height: 55;
-}
+@media (max-width: 992px) {
+  .skills-content {
+    grid-template-columns: 1fr;
+  }
 
-.skill-img-btn-wrapper .round-text {
-  right: 7px;
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .skills-area .section-title-wrapper {
-    justify-content: center;
+  .skills-container {
+    padding: 2rem 1rem;
   }
 
-  .skills-area .skills-info {
-    padding-left: 0;
+  .skill-card {
+    padding: 1rem;
   }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }

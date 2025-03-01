@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Row, Col, Button, Card, Modal } from "antd";
-import { ArrowRightOutlined, NodeExpandOutlined } from "@ant-design/icons";
+import { Row, Col, Card, Modal, Button } from "antd";
+import { ArrowRightOutlined } from "@ant-design/icons";
 import "./Portfolio.css";
-import project1Image from "../assets/images/projects/project-1.png";
+
+// Project Images
 import project2Image from "../assets/images/projects/project-3.png";
 import project3Image from "../assets/images/projects/project-6.png";
 import project4Image from "../assets/images/projects/project-4.png";
 import project5Image from "../assets/images/projects/project-7.png";
-import project6Image from "../assets/images/projects/project-2.png";
 import project7Image from "../assets/images/projects/project-5.png";
 import project8Image from "../assets/images/projects/project-8.png";
 
@@ -61,132 +61,147 @@ const projectData = [
     description: "React-based fun game.",
     image: project8Image,
     demoLink: "https://m2m-fun.netlify.app/"
-  },
+  }
 ];
 
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("*");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const handleModalOpen = (project) => {
-    setSelectedProject(project);
-  };
-
-  const handleModalClose = () => {
-    setSelectedProject(null);
-  };
+  const categories = [
+    "all",
+    "Graphics-design",
+    "Web-design",
+    "React",
+    "Machine-learning",
+    "Fun"
+  ];
 
   const filterProjects = (category) => {
-    if (category === "*") {
-      return projectData;
-    }
-    return projectData.filter((project) => project.category === category);
+    if (category === "all") return projectData;
+    return projectData.filter(project => project.category === category);
   };
 
   const renderDescription = (description) => {
     if (Array.isArray(description)) {
       return (
-        <ul>
-          {description.map((desc, index) => (
-            <li key={index}>{desc}</li>
+        <ul className="description-list">
+          {description.map((item, index) => (
+            <li key={index}>{item}</li>
           ))}
         </ul>
       );
     }
-    return <p>{description}</p>;
+    return <p className="description-text">{description}</p>;
   };
 
   return (
-    <section id="portfolio" className="project-area pt-135">
-      <div className="port-container">
-        <div className="section-title">
-          <h2>Latest Projects</h2>
-          <p className="h-p">Best of Our Works</p>
-        </div>
-
-        <div className="section-title-wrapper">
-          <div className="project-menu">
-            <ul>
-              {[
-                "*",
-                "Graphics-design",
-                "Web-design",
-                "React",
-                "Machine-learning",
-                "Fun"
-              ].map((category) => (
-                <li
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={selectedCategory === category ? "active" : ""}
-                >
-                  {category === "*" ? "All Projects" : category.replace("-", " ")}
-                </li>
-              ))}
-            </ul>
-          </div>
+    <section id="project" className="portfolio-section">
+      <div className="portfolio-header">
+        <h2 className="section-title">Latest Projects</h2>
+        <p className="section-subtitle">Best of Our Works</p>
+        
+        <div className="category-filter">
+          {categories.map(category => (
+            <button
+              key={category}
+              className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category.replace("-", " ")}
+            </button>
+          ))}
         </div>
       </div>
 
-      {selectedProject && (
-        <Modal
-          title={selectedProject.title}
-          visible={true}
-          onCancel={handleModalClose}
-          footer={null}
-          style={{ backgroundColor: "#222", color: "#fff" }}
-          bodyStyle={{ backgroundColor: "#222", color: "#fff" }}
-          titleStyle={{ color: "#fff" }}
-        >
-          <img
-            src={selectedProject.image}
-            alt={selectedProject.title}
-            style={{
-              width: "100%",
-              borderRadius: "8px",
-            }}
-          />
-          {renderDescription(selectedProject.description)}
-        </Modal>
-      )}
-
-      <div className="portfolio-card-main">
-        <Row gutter={[16, 16]}>
-          {filterProjects(selectedCategory).map((project) => (
-            <Col xs={24} sm={12} md={8} key={project.id}>
+      <div className="portfolio-grid">
+        <Row gutter={[14, 24]}>
+          {filterProjects(selectedCategory).map(project => (
+            <Col key={project.id} xs={24} sm={12} lg={8} xl={6}>
               <Card
                 hoverable
+                className="project-card"
                 cover={
-                  <img
-                    alt={project.title}
-                    src={project.image}
-                    className="portfolio-image"
-                  />
+                  <div className="card-image-container">
+                    <img
+                      alt={project.title}
+                      src={project.image}
+                      className="project-image"
+                    />
+                    <div className="image-overlay">
+                      <Button
+                        type="primary"
+                        shape="round"
+                        onClick={() => setSelectedProject(project)}
+                      >
+                        View Details
+                      </Button>
+                    </div>
+                  </div>
                 }
-                onClick={() => handleModalOpen(project)}
-                className="portfolio-card"
               >
-                <div className="project-title-wrapper">
-                  <h5>{project.title}</h5>
-                  <p>{project.description}</p>
+                <div className="project-meta">
+                  <span className="project-category">{project.category}</span>
                   {project.demoLink && (
-                  <Button
-                    type="link"
-                    href={project.demoLink}
-                    target="_blank"
-                    icon={<ArrowRightOutlined/>}
-                    style={{ padding: "0", fontSize: "14px", color: "#fff" }}
-                  >
-                    View Demo
-                  </Button>
-                )}
+                    <Button
+                      type="link"
+                      href={project.demoLink}
+                      target="_blank"
+                      icon={<ArrowRightOutlined />}
+                      className="demo-link"
+                    >
+                      Live Demo
+                    </Button>
+                  )}
                 </div>
-               
+                <h3 className="project-title">{project.title}</h3>
+              
               </Card>
             </Col>
           ))}
         </Row>
       </div>
+
+      <Modal
+        visible={!!selectedProject}
+        onCancel={() => setSelectedProject(null)}
+        footer={null}
+        className="project-modal"
+        width="90%"
+        centered
+      >
+        {selectedProject && (
+          <div className="modal-content">
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.title}
+              className="modal-image"
+            />
+            <div className="modal-details">
+              <h2>{selectedProject.title}</h2>
+              <div className="project-info">
+                <span className="project-category">
+                  {selectedProject.category}
+                </span>
+                {selectedProject.demoLink && (
+                  <Button
+                    type="primary"
+                    href={selectedProject.demoLink}
+                    target="_blank"
+                    icon={<ArrowRightOutlined />}
+                  >
+                    Visit Live Demo
+                  </Button>
+                )}
+              </div>
+              <div className="project-description">
+                {renderDescription(selectedProject.description)}
+              </div>
+             
+            </div>
+          </div>
+        )}
+      </Modal>
     </section>
   );
 };

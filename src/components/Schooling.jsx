@@ -7,6 +7,11 @@ import "./Schooling.css";
 
 const timeline = [
   {
+    yearRange: "Sep-2024 to Feb-2025",
+    degree: "Internship - Service now / Full Stack Developer",
+    institution: "Dotsito",
+  },
+  {
     yearRange: "2018 - 2019",
     degree: "SSLC",
     institution: "Sengunthar Vidhyalaya Matriculation School",
@@ -18,69 +23,62 @@ const timeline = [
   },
   {
     yearRange: "2021-2025",
-    degree: "B.TECH (AI&DS) ",
+    degree: "B.TECH (AI&DS)",
     institution: "Erode Sengunthar Engineering College",
-  },
-  {
-    yearRange: "2025 - Present",
-    degree: "Internship - Service now / Full Stack Developer",
-    institution: "Dotsito",
   },
 ];
 
 const Schooling = () => {
   return (
-    <section className="schooling-area mt-95" id="about">
+    <section className="schooling-area" id="about">
       <div className="schooling-container">
-        <h2 className="section-title">About</h2>
-      </div>
-
-      <div className="schooling-container-wrapper">
-        <div className="personal-iden">
-          <img className="profile-pic" src={profilePic} alt="profile picture" />
-          <div className="personal-info">
-            {/* First Typing Effect */}
-            <Typing speed={100} eraseDelay={1000} cursor="|" text="Arul Prakash.V" className="schol-h2" />
-            <br />
-            {/* Second Typing Effect */}
-            <div className="schol-h2">
-  <Typing speed={100} eraseDelay={1000} cursor="|" text="UI/UX Designer" />
-  <Typing speed={50} eraseDelay={1000}  text=" Graphic Designer" cursor="|"/>
-</div>          </div>
-        </div>
-
-        <div className="schooling-container">
-          <span className="hr-tit">
-            <img src={dot} alt="skills" className="img-dot" />
-          </span>
-          <div className="section-title-wrapper">
-            <h4 className="schol-h2">Schooling&Experience</h4>
-          </div>
-
-          <div className="row">
-            <img className="stylish-star" src={star} alt="stylish star" />
-
-            <div className="timeline-wrapper col-lg-6 col-md-6">
-              <div className="timeline">
-                {timeline.map((entry, index) => (
-                  <div key={index} className="timeline-item-wrapper">
-                    <span className="circle">
-                      <span></span>
-                    </span>
-                    <p className="years">{entry.yearRange}</p>
-                    <div className="experience-details">
-                      <h4>{entry.degree}</h4>
-                      <p>{entry.institution}</p>
-                    </div>
-                  </div>
-                ))}
+        <h2 className="section-title">About Me</h2>
+        
+        <div className="profile-section">
+          <div className="profile-content">
+            <img className="profile-pic" src={profilePic} alt="profile" />
+            <div className="profile-info">
+              <Typing 
+                speed={100} 
+                eraseDelay={1000} 
+                cursor="|" 
+                text="Arul Prakash.V" 
+                className="name-typing"
+              />
+              <div className="role-typing">
+                <Typing 
+                  speed={100} 
+                  eraseDelay={1000} 
+                  cursor="|" 
+                  text="UI/UX Designer" 
+                />
+                <Typing 
+                  speed={100} 
+                  eraseDelay={1000} 
+                  text="Graphic Designer" 
+                  cursor="|"
+                />
               </div>
             </div>
-            <img src={dot} alt="skills" className="img-dot" />
+          </div>
+        </div>
+
+        <div className="timeline-section">
+          <h3 className="timeline-title">Education & Experience</h3>
+          <div className="timeline-container">
+            {timeline.map((item, index) => (
+              <div key={index} className="timeline-item">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <span className="timeline-date">{item.yearRange}</span>
+                  <h4 className="timeline-degree">{item.degree}</h4>
+                  <p className="timeline-school">{item.institution}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-      <div className="extra-div"></div>
     </section>
   );
 };

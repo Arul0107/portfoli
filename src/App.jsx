@@ -20,7 +20,7 @@ const App = () => {
     <div className="app-container">  {/* Add a class here to ensure styling */}
       <Navbar />
       <Hero />
-      <Experience />
+      {/* <Experience /> */}
       <Portfolio />
       <Schooling />
       <MySkills />

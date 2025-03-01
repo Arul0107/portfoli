@@ -1,93 +1,67 @@
-import React, { useState } from 'react';
-import { Link } from 'react-scroll'; // Import Link from react-scroll
-import './Navbar.css'; // Custom styles for the Navbar
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
+import './Navbar.css';
 import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     const handleMenuToggle = () => {
-        setIsMobile(!isMobile); // Toggle the menu visibility
+        setIsMobile(!isMobile);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            setScrolled(offset > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <header className="navbar">
+        <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-container">
-                {/* Brand Logo */}
                 <div className="navbar-logo">
-                    <a href="#home">
+                    <Link to="home" smooth={true} duration={500}>
                         <img src={logo} alt="logo" className="navbar-logo-img" />
-                    </a>
+                    </Link>
                 </div>
 
-                {/* Navigation Menu */}
                 <nav className={`navbar-menu ${isMobile ? 'show' : ''}`}>
                     <ul className="navbar-menu-items">
-                        <li>
-                            <Link 
-                                to="home" // Target section ID
-                                smooth={true} // Smooth scrolling
-                                duration={1000} // Scroll duration in ms
-                                offset={-70} // Adjust scroll offset if needed
-                                className="navbar-link"
-                            >
-                                Home
-                            </Link>
-                        </li>
-                        <li>
-                            <Link 
-                                to="portfolio"
-                                smooth={true}
-                                duration={1000}
-                                offset={-70}
-                                className="navbar-link"
-                            >
-                                Portfolio
-                            </Link>
-                        </li>
-                        <li>
-                            <Link 
-                                to="skills"
-                                smooth={true}
-                                duration={1000}
-                                offset={-70}
-                                className="navbar-link"
-                            >
-                                Skills
-                            </Link>
-                        </li>
-                        <li>
-                            <Link 
-                                to="about"
-                                smooth={true}
-                                duration={1000}
-                                offset={-70}
-                                className="navbar-link"
-                            >
-                                About
-                            </Link>
-                        </li>
-                        <li>
-                            <Link 
-                                to="contact"
-                                smooth={true}
-                                duration={1000}
-                                offset={-70}
-                                className="navbar-link"
-                            >
-                                Contact
-                            </Link>
-                        </li>
+                        {['home', 'project', 'skills', 'about', 'contact'].map((item) => (
+                            <li key={item}>
+                                <Link 
+                                    to={item}
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-70}
+                                    className="navbar-link"
+                                    onClick={() => setIsMobile(false)}
+                                >
+                                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                                    <span className="hover-underline"></span>
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
 
-                {/* Contact Button */}
                 <div className={`navbar-contact-btn ${isMobile ? 'hide' : ''}`}>
-                    <button className="navbar-theme-btn">Let's Talk</button>
+                    <button className="navbar-theme-btn">
+                        <span>Let's Talk</span>
+                        <div className="hover-effect"></div>
+                    </button>
                 </div>
 
-                {/* Mobile Menu Toggle */}
-                <div className="navbar-mobile-menu-trigger" onClick={handleMenuToggle}>
+                <div 
+                    className={`navbar-mobile-menu-trigger ${isMobile ? 'active' : ''}`} 
+                    onClick={handleMenuToggle}
+                    aria-label="Mobile menu"
+                >
                     <span className="navbar-burger-icon"></span>
                 </div>
             </div>
