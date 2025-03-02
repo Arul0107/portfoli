@@ -3,7 +3,7 @@ import { Row, Col, Button } from "antd";
 import "./Hero.css";
 import longArrow from "../assets/images/hero/long-arrow.svg";
 import stylishArrow from "../assets/images/hero/style-arrow.svg";
-import profilePic from "../assets/images/hero/profile-picture.png"; // Verify correct path
+import profilePic from "../assets/images/hero/Arulpro.jpg"; // Verify correct path
 import star from "../assets/images/hero/star.svg";
 
 const Hero = () => {
@@ -38,9 +38,10 @@ const Hero = () => {
                 <img 
                   src={profilePic} 
                   alt="Arul Prakash" 
-                  className="profile-image" 
+                  className="profile-image " 
                 />
               </div>
+              <div className="animated-border"></div>
               <img 
                 src={stylishArrow} 
                 alt="decorative arrow" 

@@ -129,11 +129,11 @@
 
 .animated-border {
   position: absolute;
-  width: 105%;
-  height: 105%;
+  width: 71%;
+  height: 90%;
   border-radius: 50%;
-  top: 50%;
-  left: 50%;
+  top: 57%;
+  left: 34%;
   transform: translate(-50%, -50%);
   border: 3px solid #f1ff9d;
   animation: border-pulse 2s infinite;

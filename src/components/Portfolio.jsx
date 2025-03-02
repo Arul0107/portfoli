@@ -10,6 +10,7 @@ import project4Image from "../assets/images/projects/project-4.png";
 import project5Image from "../assets/images/projects/project-7.png";
 import project7Image from "../assets/images/projects/project-5.png";
 import project8Image from "../assets/images/projects/project-8.png";
+import project9Image from "../assets/images/projects/project-9.png"
 
 const projectData = [
   {
@@ -61,6 +62,14 @@ const projectData = [
     description: "React-based fun game.",
     image: project8Image,
     demoLink: "https://m2m-fun.netlify.app/"
+  },
+  {
+    id: 7,
+    category: "Fun",
+    title: "BMI",
+    description: "React-based BMI .",
+    image: project9Image,
+    demoLink: "https://chekbmi.netlify.app/"
   }
 ];
 
