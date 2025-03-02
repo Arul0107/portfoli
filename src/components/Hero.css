@@ -106,6 +106,10 @@
   position: relative;
   padding: 2rem;
 }
+.hover-effect{
+  left: 0;
+  background: none;
+}
 
 .profile-container {
   max-width: 600px;
@@ -245,3 +249,21 @@
     width: 100%;
   }
 }
+
+.profile-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+ 
+}
+
+.image-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ... (rest of previous CSS remains) ... */
