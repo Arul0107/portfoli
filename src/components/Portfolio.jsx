@@ -82,7 +82,7 @@ const Portfolio = () => {
     "Graphics-design",
     "Web-design",
     "React",
-    "Machine-learning",
+    // "Machine-learning",
     "Fun"
   ];
 
