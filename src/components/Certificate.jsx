@@ -6,6 +6,7 @@ import kit from '../assets/images/certificat/kit.png';
 import nit from '../assets/images/certificat/nit.png';
 import pan from '../assets/images/certificat/pan.png';
 import vel from '../assets/images/certificat/vel.png';
+import serv from '../assets/images/certificat/serv.png';
 
 const Certificate = () => {
   const settings = {
@@ -71,6 +72,12 @@ const Certificate = () => {
       title: "VELALAR COLLEGE OF ENGINEERING AND TECHNOLOGY", 
       description: "Design System Architecture", 
       imgSrc: vel 
+    },
+    { 
+      id: 6, 
+      title: "Micro—Certification — Welcome to ServiceNow", 
+      description: "ServiceNow", 
+      imgSrc: serv  
     },
   ];
 
