@@ -253,6 +253,44 @@
   position: relative;
   z-index: 2;
 }
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cta-button {
+  width: 100%;
+  max-width: 250px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.linkedin {
+  background-color: #edfa9d;
+  color: black;
+  border: none;
+}
+
+.github {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.instagram {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+@media (min-width: 600px) {
+  .cta-button {
+    width: auto;
+  }
+}
 
 
 /* ... (rest of previous CSS remains) ... */
