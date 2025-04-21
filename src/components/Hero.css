@@ -127,17 +127,6 @@
   box-shadow: 0 0 50px rgba(241, 255, 157, 0.2);
 }
 
-.animated-border {
-  position: absolute;
-  width: 71%;
-  height: 90%;
-  border-radius: 50%;
-  top: 57%;
-  left: 34%;
-  transform: translate(-50%, -50%);
-  border: 3px solid #f1ff9d;
-  animation: border-pulse 2s infinite;
-}
 
 /* Animations */
 @keyframes border-pulse {
