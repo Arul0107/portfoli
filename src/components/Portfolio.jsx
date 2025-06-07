@@ -10,21 +10,28 @@ import project4Image from "../assets/images/projects/project-4.png";
 import project5Image from "../assets/images/projects/project-7.png";
 import project7Image from "../assets/images/projects/project-5.png";
 import project8Image from "../assets/images/projects/project-8.png";
-import project9Image from "../assets/images/projects/project-9.png"
+import project9Image from "../assets/images/projects/project-9.png";
+import project10Image from "../assets/images/projects/leads.png";
+import project11Image from "../assets/images/projects/ai.png";
 
 const projectData = [
   {
     id: 1,
-    category: "Graphics-design",
-    title: "Crunchy Bites",
-    description: [
-      "Local shop app for seamless snack orders",
-      "Focus on user-friendly design and navigation",
-      "Vibrant visuals for an engaging experience",
-      "Tailored features for local customer convenience",
-      "Efficient purchase process for quick access"
-    ],
-    image: project2Image
+    category: "Machine-learning",
+    title: "Human Interaction & Change Detection System",
+    description:
+      "This integrated project includes two key modules: (1) a Hand Gesture Mouse using real-time color detection, enabling intuitive human-computer interaction with a 15% improvement in accuracy and 20% increased efficiency. It employs OpenCV and Python to detect and track hand gestures, overcoming color calibration and noise reduction challenges for a smooth user experience (accuracy: 90%). (2) A Land Area Change Detection system using Deep Learning, combining superpixel segmentation (SLIC) and CNN-based classification to detect terrain changes with 90% accuracy and 88.5% model performance. Evaluated with precision, recall, and F1-score metrics (F1-score: 8.8), this model demonstrated a 17% efficiency improvement and was positively reviewed across 4 academic departments.",
+    image: project11Image,
+    demoLink: "", // Add GitHub or demo link here if available
+  },
+  {
+    id: 8,
+    category: "React",
+    title: "Leads Management Platform",
+    description:
+      "A React-based leads management platform built for sales teams to efficiently track, organize, and convert potential customers. Includes features such as lead status tracking, quotation creation, invoice generation, and product management. Developed using the MERN stack with role-based access, real-time CRUD operations, and an intuitive dashboard.",
+    image: project10Image,
+    demoLink: "https://crmfrontend-sage.vercel.app/",
   },
   {
     id: 2,
@@ -37,7 +44,8 @@ const projectData = [
     id: 3,
     category: "Web-design",
     title: "NEURO KNOT",
-    description: "A college symposium website built with web design technologies.",
+    description:
+      "A college symposium website built with web design technologies.",
     image: project4Image,
     demoLink: "https://neuroknot--2k24.web.app/",
   },
@@ -61,7 +69,7 @@ const projectData = [
     title: "M2M",
     description: "React-based fun game.",
     image: project8Image,
-    demoLink: "https://m2m-fun.netlify.app/"
+    demoLink: "https://m2m-fun.netlify.app/",
   },
   {
     id: 7,
@@ -69,8 +77,31 @@ const projectData = [
     title: "BMI",
     description: "React-based BMI .",
     image: project9Image,
-    demoLink: "https://chekbmi.netlify.app/"
-  }
+    demoLink: "https://chekbmi.netlify.app/",
+  },
+
+  {
+    id: 9,
+    category: "Fun",
+    title: "BMI",
+    description: "React-based BMI .",
+    image: project9Image,
+    demoLink: "https://chekbmi.netlify.app/",
+  },
+  ,
+  {
+    id: 10,
+    category: "Graphics-design",
+    title: "Crunchy Bites",
+    description: [
+      "Local shop app for seamless snack orders",
+      "Focus on user-friendly design and navigation",
+      "Vibrant visuals for an engaging experience",
+      "Tailored features for local customer convenience",
+      "Efficient purchase process for quick access",
+    ],
+    image: project2Image,
+  },
 ];
 
 const Portfolio = () => {
@@ -79,16 +110,16 @@ const Portfolio = () => {
 
   const categories = [
     "all",
+    "Machine-learning",
+    "React",
     "Graphics-design",
     "Web-design",
-    "React",
-    // "Machine-learning",
-    "Fun"
+    "Fun",
   ];
 
   const filterProjects = (category) => {
     if (category === "all") return projectData;
-    return projectData.filter(project => project.category === category);
+    return projectData.filter((project) => project.category === category);
   };
 
   const renderDescription = (description) => {
@@ -109,12 +140,14 @@ const Portfolio = () => {
       <div className="portfolio-header">
         <h2 className="section-title">Latest Projects</h2>
         <p className="section-subtitle">Best of Our Works</p>
-        
+
         <div className="category-filter">
-          {categories.map(category => (
+          {categories.map((category) => (
             <button
               key={category}
-              className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
+              className={`filter-btn ${
+                selectedCategory === category ? "active" : ""
+              }`}
               onClick={() => setSelectedCategory(category)}
             >
               {category.replace("-", " ")}
@@ -125,7 +158,7 @@ const Portfolio = () => {
 
       <div className="portfolio-grid">
         <Row gutter={[14, 24]}>
-          {filterProjects(selectedCategory).map(project => (
+          {filterProjects(selectedCategory).map((project) => (
             <Col key={project.id} xs={24} sm={12} lg={8} xl={6}>
               <Card
                 hoverable
@@ -164,7 +197,6 @@ const Portfolio = () => {
                   )}
                 </div>
                 <h3 className="project-title">{project.title}</h3>
-              
               </Card>
             </Col>
           ))}
@@ -206,7 +238,6 @@ const Portfolio = () => {
               <div className="project-description">
                 {renderDescription(selectedProject.description)}
               </div>
-             
             </div>
           </div>
         )}
