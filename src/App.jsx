@@ -14,6 +14,7 @@ import './responsive.css';  // Make sure this file has no unwanted global styles
 import { ContactsFilled } from '@ant-design/icons';
 import ContactPage from './components/ContactPage';
 import Footer from './components/Footer';
+import TechStackGrid from './components/TechStackCard';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Navbar />
       <Hero />
       {/* <Experience /> */}
+      <TechStackGrid   />
       <Portfolio />
       <Schooling />
       <MySkills />
